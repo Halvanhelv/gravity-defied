@@ -1,0 +1,96 @@
+# ==============================================
+# === Here are some example configurations =====
+# === for different types of games         =====
+# ==============================================
+
+# ========================================================
+# See the following file/url for a detailed guide for
+# deploying to Itch.io:
+# - ./docs/guides/deploying-to-itch.md
+# - https://docs.dragonruby.org/#/guides/deploying-to-itch
+# ========================================================
+
+# ===========================================================
+# Low Resolution Game at 64x64 pixels
+# ===========================================================
+# Perfect for LOWREZ Jam: https://itch.io/jam/lowrezjam-2026
+# Sample Apps:
+# - ./samples/99_genre_lowrez/resolution_64x64
+# ===========================================================
+
+# configuration that's needed for any release
+devid=your_itchio_username
+devtitle=Your Itch.io Display Name
+gameid=your_itchio_game_id
+gametitle=Your Game Title
+version=0.1
+icon=metadata/icon.png
+
+# aspect_mode=1 means 1:1 aspect ratio
+aspect_mode=1
+
+# aspect_size=64 means 64 pixels width and height
+aspect_size=64
+
+# a scale quality of 3 means "pixel art scaling"
+scale_quality=3
+
+# Pro version of DragonRuby will give you extremely sharp sprites
+highdpi=true
+
+# ===========================================================
+# Low Resolution Game at 84x48 pixels
+# ===========================================================
+# Perfect for Nokia 3310 Jam: https://itch.io/jam/nokiajam7
+# Sample Apps:
+# - ./samples/99_genre_lowrez/nokia_3310
+# - ./samples/99_genre_lowrez/nokia_3310_snake
+# ===========================================================
+
+# configuration that's needed for any release
+devid=your_itchio_username
+devtitle=Your Itch.io Display Name
+gameid=your_itchio_game_id
+gametitle=Your Game Title
+version=0.1
+icon=metadata/icon.png
+
+# aspect_mode=0 means 16:9 aspect ratio
+aspect_mode=0
+
+# aspect_size=48 means 48 pixels width and height
+aspect_size=48
+
+# a scale quality of 3 means "pixel art scaling"
+scale_quality=3
+
+# Pro version of DragonRuby will give you extremely sharp sprites
+highdpi=true
+
+# ===========================================================
+# Low Resolution Game at 128x128 pixels
+# ===========================================================
+# Just like PICO-8 or Bitsy
+# Sample Apps:
+# - ./samples/99_genre_lowrez/lowrez_hello_world
+# - ./samples/99_genre_lowrez/lowrez_labels
+# ===========================================================
+
+devid=your_itchio_username
+devtitle=Your Itch.io Display Name
+gameid=your_itchio_game_id
+gametitle=Your Game Title
+version=0.1
+icon=metadata/icon.png
+
+# aspect_mode=1 means 1:1 aspect ratio
+aspect_mode=1
+
+# aspect_size=64 means 64 pixels width and height
+aspect_size=128
+
+# a scale quality of 3 means "pixel art scaling"
+scale_quality=3
+
+# Pro version of DragonRuby will give you extremely sharp sprites
+highdpi=true
