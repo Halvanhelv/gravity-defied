@@ -1,5 +1,9 @@
 # Gravity Defied on DragonRuby
 
+[![Autopilot run on the Pro track Undertaker](docs/undertaker.gif)](https://halvanhelv.github.io/gravity-defied/)
+
+**[▶ Play in the browser](https://halvanhelv.github.io/gravity-defied/)** · built with [DragonRuby](https://dragonruby.org) · GPL-2.0
+
 An experimental port of the 2004 J2ME motorbike game to DragonRuby GTK, with the original
 sprites (or the original line-art mode), the original unlock rules and best times.
 
@@ -7,8 +11,6 @@ Gravity Defied was made by Codebrew Software (2004); the sprites and tracks come
 Based on the community ports [gravity_defied_cpp](https://github.com/rgimad/gravity_defied_cpp)
 and [gravity-defied-web](https://github.com/yurkagon/gravity-defied-web). Both are GPL-2.0,
 so this port is GPL-2.0 as well.
-
-**Play in the browser:** https://halvanhelv.github.io/gravity-defied/
 
 ## Run from source
 
