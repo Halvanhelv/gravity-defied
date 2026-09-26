@@ -1,0 +1,181 @@
+# ==============================================
+# === Flags Required for releasing a game ======
+# ==============================================
+
+# === Remove the pound sign and leading space for the properties below before publishing your game. ===
+devid=gravitydefiedport
+devtitle=Gravity Defied Port
+gameid=gravity-defied
+gametitle=Gravity Defied
+version=1.0
+# icon=metadata/icon.png
+
+# ==============================================
+# === Flags available at all licensing tiers ===
+# ==============================================
+
+# +== Orientation Portrait/Landscape ===
+# | The orientation can be set to either ~landscape~ (1280x720), ~portrait~ (720x1280), ~landscape,portrait~, or ~portrait,landscape~. The default is ~landscape~.
+# | If ~landscape,portrait~ or ~portrait,landscape~, then the first value is used as the starting orientation for your game.
+# +=====================================
+orientation=landscape
+
+# +== Aspect Mode ===
+# | Controls the aspect ratio of your game's logical resolution.
+# | - 0: (default) ~aspect_mode=0~ represents an aspect ratio of 16:9. The following ~aspect_size~ values are allowed:
+# |   -  48  ->    84x48
+# |   -  64  ->   114x64
+# |   -  72  ->   128x72
+# |   -  90  ->   160x90
+# |   - 128  ->  228x128
+# |   - 144  ->  256x144
+# |   - 180  ->  320x180
+# |   - 256  ->  454x256
+# |   - 360  ->  640x360
+# |   - 512  ->  910x512
+# |   - 576  -> 1024x576
+# |   - 720  -> 1280x720 (default)
+# | - 1: ~aspect_mode=1~ represents an aspect ratio of 1:1. The following ~aspect_size~ values are allowed:
+# |   - 32  ->     32x32
+# |   - 64  ->     64x64
+# |   - 128  ->  128x128
+# |   - 256  ->  256x256
+# |   - 512  ->  512x512
+# |   - 720  ->  720x720
+# | If an out-of-range value is given, it snaps down to the nearest valid resolution for that mode.
+# | In portrait orientation the width and height are automatically swapped (e.g. 1280x720 becomes 720x1280).
+# +===================
+aspect_mode=0
+aspect_size=720
+
+# +== Sprite Rendering scale quality ===
+# | Defines the render scale quality for sprites. scale_quality=0 (default) is nearest neighbor, scale_quality=1 is linear, scale_quality=2 is antialiased.
+# | - 0: nearest neighbor (if your game leverages low rez render targets, then this may be the best option)
+# | - 1: best visual quality
+# | - 2: best visual quality (option 1 and 2 are the same and resolve to the same value for backwards compatability)
+# | - 3: SDL3's pixel art shader (if your game uses pixel art, then this may be the best option)
+# +=====================================
+scale_quality=0
+
+# +== HD Mode ===
+# | HD Mode: Set hd=false for low rez games
+# +==============
+hd=true
+
+# +== Directories to Ignore during packaging ===
+# | A comma delimited list of directories that should be ignored during the
+# | publishing process (ONLY TOP LEVEL DIRECTORIES ARE TESTED UNLESS ignore_directories_recursively=true).
+# | For example, if your game supports saves, you'd want to ignore
+# | that directory (example format: ignore_directories=tmp,saves,dev,assets).
+# +=============================================
+ignore_directories=test,tools,data,__save_data__,screenshots
+
+# +=== Ignore Directories Recursively ==========
+# | If you want the ignore_directories list to be applied to child directories, set ignore_directories_recursively=true.
+# | IMPORTANT: Any directory that matches the ignore list will be ignored (REGARDLESS OF HIERARCHY).
+# |            Be very careful in enabling this behavior as it can cause a child directory
+# |            to be ignored that you didn't intend to (especially if your ignore_directories list has
+# |            common/generic directory names).
+# |            For example:
+# |              ignore_directories value: saves
+# |              Directory structure:
+# |              - mygame
+# |                - saves <---- This directory will be ignored
+# |                - libs
+# |                  - saves <---- This directory will be ignored
+# +=============================================
+# ignore_directories_recursively=false
+
+# =======================================================
+# === Flags available in DragonRuby Game Toolkit Pro ====
+# =======================================================
+
+# +=== Byte Code Compliation ===
+# | Uncomment the entry below to bytecode compile your Ruby code
+# +=============================
+# compile_ruby=false
+
+# +=== Android Package Id ===
+# | Uncomment the entry below to specify the package name for your APK
+# +==========================
+# packageid=org.dev.gamename
+
+# +== Orientation Override for Mobile ==
+# | You can override the orientation of your game for mobile devices. If this value isn't provided, it which will use
+# | the value from ~orientation=~. Valid values for the override are portrait, or landscape
+# +=====================================
+# orientation_android=inherit
+# orientation_ios=inherit
+
+# +== High DPI ===
+# | Setting this property to true will enable High DPI rendering (try in combination with scale_quality to see what looks best)
+# +===============
+# highdpi=false
+
+# +== Texture Atlases ===
+# | Directory that is probed for png files to reload if DR.reset is invoked. This directory
+# | is recursively searched for reloading.
+# | See sample app for texture atlas usage: =./samples/07_advanced_rendering_hd/02_texture_atlases=
+# | DragonRuby will recursively search the following directory for texture atlases. Texture atlases will
+# | be automatically enabled if hd=true.
+# | NOTE: This directory is
+# +======================
+# sprites_directory=sprites
+
+# +== All Screen Mode ===
+# | To render edge to edge on the device, set hd_letterbox=false
+# | NOTE: remove your game's letter box will mean more work for you since you have to
+# |       think about what you want to render outside of the games main 1280x720 logical
+# |       area.
+# +======================
+# hd_letterbox=true
+
+# +== Scaling options for All Screen Mode ===
+# | You can specify the maximum scale for your game. hd_max_scale's default value is 0 which
+# | means "stretch to fit" (while retaining a 16:9 aspect ratio). This scaling method is not
+# | pixel perfect, but is a reasonable default for most games.
+# | hd_max_scale values other than 0 *will* be pixel perfect. Resolutions higher than your max scale
+# | will give more area outside of your safe area that can be rendered to (if hd_letterbox=false)
+# | or give you a bigger letterbox (if hd_letterbox=true).
+# | Example:
+# |   - Assuming that the hd_max_scale=1 (which means a game max scale of 1280x720) and hd_letterbox=false...
+# |   - If the screen size is 2560x1440...
+# |   - The safe area of the game will be rendered at 1280x720 centered vertically and horizontally within 2560x1440.
+# |   - The horizontal centering of the game will mean that you have 640 pixels to the left and 640 pixels to the right of the game's safe area to render to.
+# |   - The vertical centering of the game will mean that you have 360 pixels above and 360 below the game's safe area to render to.
+# | Take a look at the following sample apps to see how updating hd_max_scale and hd_letterbox affects your game:
+# |   - ./samples/07_advanced_rendering_hd/03_allscreen_properties
+# |   - ./samples/99_genre_platformer/clepto_frog
+# |   - ./samples/99_genre_platformer/the_little_probe
+# +==========================================
+
+# Scales to fit (recommended option if you're not making a pixel perfect game, or not trying to support ultrawide displays)
+# NOTE: If you want a pixel perfect game for all resolutions. You'll want to use hd_max_scale=400.
+#       If you don't want to worry about rendering game artifacts outside of the pixel perfect area,
+#       keep hd_letterbox=true.
+# hd_max_scale=0
+
+# Available hd_max_scale values (other than hd_max_scale=0 which is described above)
+# 720p: Scales up to 1280x720
+# hd_max_scale=100
+
+# HD+: scales up to 1600x900
+# hd_max_scale=125
+
+# 1080p/Full HD: scales up to 1920x1080
+# hd_max_scale=150
+
+# Full HD+: scales up to 2240x1260
+# hd_max_scale=175
+
+# 1440p: scales up to 2560x1440
+# hd_max_scale=200
+
+# 1800p: scales up to 3200x1800
+# hd_max_scale=250
+
+# 4k: scales up to 3840x2160
+# hd_max_scale=300
+
+# 5k: scales up to 6400x2880
+# hd_max_scale=400

@@ -1,0 +1,63 @@
+# ==========================
+# In-Game web server.
+# ==========================
+# The in-game web server is disabled by default. To enable it, uncomment the lines
+# below. For remote hotload to work, the webserver needs to be enabled, must have
+# the port set to 9001, and remote_clients must be set to true.
+# webserver.enabled=true
+# webserver.port=9001
+# webserver.remote_clients=true
+
+# ==========================
+# Logging
+# ==========================
+# Log levels:
+# - spam
+# - debug
+# - info
+# - warn
+# - error
+# - unfiltered
+# - nothing
+# Default value is "debug" during development and "info" in production.
+# log.level=debug
+
+# Log Level Char Preamble
+# Removes the log level char from log output (defaulted to true/enabled)
+# log.level_char=true
+
+# Log Timing Preamble
+# Removes the log timing prefix from log output (defaulted to fals/disabled)
+# log.timing=false
+
+# Log Subsystem Preamble
+# Removes the log subsystem prefix from log output (defaulted to true/enabled)
+# log.subsystem=true
+
+# Log entries that should be excluded as a comma delimited list.
+# Available subsystems:
+# - Engine
+# - Game
+# - Render
+# - HTTP
+# - HTTPServer
+log.filter_subsystems=HTTPServer,HTTP
+
+# Should use the whole display
+# equivalent to calling $gtk.set_window_fullscreen(true)
+# Note: If you use this flag, you must provide a way to
+#       exit full sceen mode from your game and wire it up
+#       to $gtk.set_window_fullscreen(false)
+# renderer.fullscreen=true
+
+# Milliseconds to sleep per frame when the game is in
+# the background (zero to disable)
+# renderer.background_sleep=0
+
+# Set the window as borderless.
+# Note: the ablity to quit the application via OS shortcuts will not
+#       work if this value is true and you must provide a means to exit the
+#       game and wire it up to $gtk.request_quit
+#       OS Shortcuts for quitting such as ALT+F4 and CMD+Q will still work.
+# renderer.borderless=true
+

@@ -1,0 +1,6 @@
+__save_data__/
+screenshots/
+errors/
+logs/
+tmp/
+.DS_Store
