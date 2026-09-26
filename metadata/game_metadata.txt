@@ -68,7 +68,7 @@ hd=true
 # | For example, if your game supports saves, you'd want to ignore
 # | that directory (example format: ignore_directories=tmp,saves,dev,assets).
 # +=============================================
-ignore_directories=test,tools,data,__save_data__,screenshots
+ignore_directories=test,tools,data,site,__save_data__,screenshots
 
 # +=== Ignore Directories Recursively ==========
 # | If you want the ignore_directories list to be applied to child directories, set ignore_directories_recursively=true.

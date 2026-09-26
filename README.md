@@ -15,7 +15,9 @@ so this port is GPL-2.0 as well.
 This repository is the `mygame` folder of a DragonRuby GTK project. Unzip DragonRuby, replace its
 `mygame` folder with this repository and run `./dragonruby`.
 
-Web build: `./dragonruby-publish --package --platforms=html5 mygame` (output in `builds/`).
+Publish to GitHub Pages: `tools/deploy_pages.sh` builds the web version and pushes the landing
+page (`site/`) to the root and the game to `play/` on the `gh-pages` branch. `--preview` only
+assembles the site into a temp folder.
 
 Menu: Up/Down choose a row, Left/Right change it, Enter ride. Locked tracks and bikes show a lock
 and what to finish to open them.
@@ -52,6 +54,7 @@ Recorded: Easy "Intro", Medium "Spikehops", Pro "Undertaker", "Intense" and "Dan
 | `app/menu.rb`, `app/hud.rb`, `app/ui.rb` | start screen, in-ride overlay, drawing helpers |
 | `app/app.rb` | switches between menu, ride and autopilot playback |
 | `app/demo.rb`, `app/demos_data.rb` | autopilot playback and the bundled recorded runs |
+| `site/` | landing page (HTML, CSS, gameplay video); `tools/deploy_pages.sh` publishes it |
 | `app/levels_data.rb` | generated from `data/levels.mrg` by `tools/convert_levels.rb` |
 
 ## Tests
