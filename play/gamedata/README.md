@@ -22,7 +22,7 @@ assembles the site into a temp folder.
 Menu: Up/Down choose a row, Left/Right change it, Enter ride. Locked tracks and bikes show a lock
 and what to finish to open them.
 Riding: arrows or WASD (up gas, down brake, left/right lean), `R` restart, `G` sprites/lines,
-`H` photo head or helmet (`sprites/head.png`, a round-cropped photo), `Esc` menu.
+`H` DragonRuby logo head or helmet, `Esc` menu.
 
 Start with the 100cc bike and the first Easy and Medium tracks. Finishing a track opens the next
 one; finishing a level's last track opens the next level and a bigger bike. Progress and the

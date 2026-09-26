@@ -4,7 +4,7 @@ class Menu
   LABELS = { level: "Level", track: "Track", bike: "Bike", graphics: "Graphics", head: "Head", start: "Ride!" }.freeze
 
   attr_reader :level, :track, :bike
-  attr_accessor :sprites, :face
+  attr_accessor :sprites, :logo_head
 
   def initialize(progress)
     @progress = progress
@@ -13,7 +13,7 @@ class Menu
     @track = 0
     @bike = 0
     @sprites = true
-    @face = false
+    @logo_head = false
   end
 
   def select(level, track, bike)
@@ -69,7 +69,7 @@ class Menu
       @sprites = !@sprites
       return nil
     when :head
-      @face = !@face
+      @logo_head = !@logo_head
       return nil
     else
       return nil
@@ -116,7 +116,7 @@ class Menu
     when :track then "#{@track + 1}. #{LEVELS[@level][@track][:name]}"
     when :bike then Game::BIKES[@bike]
     when :graphics then @sprites ? "Sprites" : "Lines"
-    when :head then @face ? "Face" : "Helmet"
+    when :head then @logo_head ? "DragonRuby" : "Helmet"
     end
   end
 

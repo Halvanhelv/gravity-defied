@@ -14,7 +14,7 @@ class App
     keys = inputs.keyboard.key_down
     @scene == :menu ? menu_tick(keys) : ride_tick(keys, inputs)
 
-    Renderer.new(out, sprites: @menu.sprites, face: @menu.face).draw(@game.physics, @game.track)
+    Renderer.new(out, sprites: @menu.sprites, logo_head: @menu.logo_head).draw(@game.physics, @game.track)
     if @scene == :menu
       @menu.draw(out)
     else
@@ -41,7 +41,7 @@ class App
       return
     end
     @menu.sprites = !@menu.sprites if keys.g
-    @menu.face = !@menu.face if keys.h
+    @menu.logo_head = !@menu.logo_head if keys.h
 
     if @game.finished?
       if @demo then back_to_menu if keys.enter
