@@ -13,7 +13,7 @@ class Menu
     @track = 0
     @bike = 0
     @sprites = true
-    @face = true
+    @face = false
   end
 
   def select(level, track, bike)
