@@ -3,16 +3,19 @@
 An experimental port of the 2004 J2ME motorbike game to DragonRuby GTK, with the original
 sprites (or the original line-art mode), the original unlock rules and best times.
 
+Gravity Defied was made by Codebrew Software (2004); the sprites and tracks come from that game.
 Based on the community ports [gravity_defied_cpp](https://github.com/rgimad/gravity_defied_cpp)
 and [gravity-defied-web](https://github.com/yurkagon/gravity-defied-web). Both are GPL-2.0,
 so this port is GPL-2.0 as well.
 
-## Run
+**Play in the browser:** https://halvanhelv.github.io/gravity-defied/
 
-```sh
-cd ~/Projects/gravity-defied-dr
-./dragonruby
-```
+## Run from source
+
+This repository is the `mygame` folder of a DragonRuby GTK project. Unzip DragonRuby, replace its
+`mygame` folder with this repository and run `./dragonruby`.
+
+Web build: `./dragonruby-publish --package --platforms=html5 mygame` (output in `builds/`).
 
 Menu: Up/Down choose a row, Left/Right change it, Enter ride. Locked tracks and bikes show a lock
 and what to finish to open them.
