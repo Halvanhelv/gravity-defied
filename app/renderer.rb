@@ -44,14 +44,14 @@ class Renderer
   ].freeze
   LINE_POSES = [Physics::POSE_BACK, Physics::POSE_NEUTRAL, Physics::POSE_FORWARD].freeze
   TORSO_BLEND = [45875, 32768, 52428].freeze
-  # The player's face instead of the helmet, bobblehead-sized, in world pixels.
-  FACE = "sprites/head.png"
-  FACE_SIZE = 13
+  # The DragonRuby logo instead of the helmet, bobblehead-sized, in world pixels.
+  LOGO_HEAD = "sprites/dragonruby.png"
+  LOGO_HEAD_SIZE = 13
 
-  def initialize(out, sprites: true, face: false)
+  def initialize(out, sprites: true, logo_head: false)
     @out = out
     @sprites = sprites
-    @face = face
+    @logo_head = logo_head
   end
 
   def draw(physics, track)
@@ -253,7 +253,7 @@ class Renderer
       body_part(:leg, j[0], j[1])
       body_part(:body, j[1], j[2], torso_t)
       body_part(:arm, j[2], j[4])
-      unless @face
+      unless @logo_head
         helmet_angle = F16.atan2(ax, ay)
         helmet_angle += 20588 if blend > 32768
         sheet(:helmet, frame_for(helmet_angle, -102943, 411774, 32, true), wx(j[3][0]), wx(j[3][1]))
@@ -264,18 +264,18 @@ class Renderer
       line_f16(*j[1], *j[2], RIDER_BODY)
       line_f16(*j[2], *j[4], RIDER_BODY)
       line_f16(*j[4], *j[7], RIDER_BODY)
-      circle(wx(j[3][0]), wx(j[3][1]), 4, HELMET, 16) unless @face
+      circle(wx(j[3][0]), wx(j[3][1]), 4, HELMET, 16) unless @logo_head
     end
-    draw_face(j[3], ax, ay) if @face
+    draw_logo_head(j[3], ax, ay) if @logo_head
 
     atlas(ATLAS[:joint], wx(j[7][0]), wx(j[7][1]))
     atlas(ATLAS[:joint], wx(j[6][0]), wx(j[6][1]))
   end
 
-  # Photo head, tilted with the bike.
-  def draw_face(head, ax, ay)
-    @out << { x: screen_x(wx(head[0])), y: screen_y(wx(head[1])), w: FACE_SIZE * ZOOM, h: FACE_SIZE * ZOOM,
-              path: FACE, anchor_x: 0.5, anchor_y: 0.5, angle: Math.atan2(ay, ax) * 180 / Math::PI,
+  # Logo head, tilted with the bike.
+  def draw_logo_head(head, ax, ay)
+    @out << { x: screen_x(wx(head[0])), y: screen_y(wx(head[1])), w: LOGO_HEAD_SIZE * ZOOM, h: LOGO_HEAD_SIZE * ZOOM,
+              path: LOGO_HEAD, anchor_x: 0.5, anchor_y: 0.5, angle: Math.atan2(ay, ax) * 180 / Math::PI,
               scale_quality_enum: 1 }
   end
 
