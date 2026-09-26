@@ -1,6 +1,6 @@
 # Gravity Defied on DragonRuby
 
-[![Autopilot run on the Pro track Undertaker](docs/undertaker.gif)](https://halvanhelv.github.io/gravity-defied/)
+[![Autopilot run on the Pro track Undertaker](docs/gameplay.gif)](https://halvanhelv.github.io/gravity-defied/)
 
 **[▶ Play in the browser](https://halvanhelv.github.io/gravity-defied/)** · built with [DragonRuby](https://dragonruby.org) · GPL-2.0
 
