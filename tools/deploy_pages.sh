@@ -18,6 +18,7 @@ build="$engine_dir/builds/$gameid-html5-$version"
 
 out=$(mktemp -d)
 if [ "${1:-}" != "--preview" ]; then
+  trap 'rm -rf "$out"' EXIT
   git clone --quiet --branch gh-pages --single-branch "$(git -C "$game_dir" remote get-url origin)" "$out"
   find "$out" -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
 fi
